@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <div class="question_area">
+      <h1>第5問．名古屋弁で「ねぶる」とは何を表す？</h1>
+    </div>
+
+    <div class="choicebox">
+      <div class="choicearea"><p class="choices1">寝る</p></div>
+      <div class="choicearea"><p class="choices2">舐める</p></div>
+      <div class="choicearea"><p class="choices3">歩く</p></div>
+      <div class="choicearea"><p class="choices4">触る</p></div>
+    </div>
+  
+    <div class="result"></div>
+
+    <a href="index.html">ホームへ</a>
+    <a href="quiz06.html">次の問題へ</a>
+
+    <audio id="se" preload="auto">
+      <source src="se/neburu1.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="se2" preload="auto">
+      <source src="se/false1.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script>
+      $(function(){
+
+        // 解答の設定
+        var thisanswer = 2;
+
+        $(".choicearea > p").css("background-color",""); //選択肢の色がグレーになっている場合があるので元に戻す
+
+               // 選択肢1を押した時のアクション
+               $(".choices1").off("click");
+        $(".choices1").on("click",function(){
+            var yourvalue = 1;
+            console.log(yourvalue);
+
+            if(thisanswer == yourvalue){
+                // alert("正解");
+                console.log("正解")
+                $(".result").html('<img src="img/img_OK.png" alt="画像" />');
+                var SE = document.getElementById('se');
+                SE.play();
+            }else{
+                // alert("不正解");
+                console.log("不正解")
+                $(".result").html('<img src="img/img_NG.png" alt="画像" />');
+                $(".choices1").css("background-color","#c0c0c0");
+                var SE = document.getElementById('se2');
+                SE.play();
+            }
+        });
+
+        // 選択肢2を押した時のアクション
+        $(".choices2").off("click");
+        $(".choices2").on("click",function(){
+            var yourvalue = 2;
+            console.log(yourvalue);
+
+            if(thisanswer == yourvalue){
+                // alert("正解");
+                console.log("正解")
+                $(".result").html('<img src="img/img_OK.png" alt="画像" />');
+                var SE = document.getElementById('se');
+                SE.play();
+            }else{
+                // alert("不正解");
+                console.log("不正解")
+                $(".result").html('<img src="img/img_NG.png" alt="画像" />');
+                $(".choices2").css("background-color","#c0c0c0");
+                var SE = document.getElementById('se2');
+                SE.play();
+            }
+        });
+
+        // 選択肢3を押した時のアクション
+        $(".choices3").off("click");
+        $(".choices3").on("click",function(){
+            var yourvalue = 3;
+            console.log(yourvalue);
+            
+            if(thisanswer == yourvalue){
+                // alert("正解");
+                console.log("正解")
+                $(".result").html('<img src="img/img_OK.png" alt="画像" />');
+                var SE = document.getElementById('se');
+                SE.play();
+            }else{
+                // alert("不正解");
+                console.log("不正解")
+                $(".result").html('<img src="img/img_NG.png" alt="画像" />');
+                $(".choices3").css("background-color","#c0c0c0");
+                var SE = document.getElementById('se2');
+                SE.play();
+            }    
+        });
+            
+        // 選択肢4を押した時のアクション
+        $(".choices4").off("click");
+        $(".choices4").on("click",function(){
+            var yourvalue = 4;
+            console.log(yourvalue);
+            
+            if(thisanswer == yourvalue){
+                // alert("正解");
+                console.log("正解")
+                $(".result").html('<img src="img/img_OK.png" alt="画像" />');
+                var SE = document.getElementById('se');
+                SE.play();
+            }else{
+                // alert("不正解");
+                console.log("不正解")
+                $(".result").html('<img src="img/img_NG.png" alt="画像" />');
+                $(".choices4").css("background-color","#c0c0c0");
+                var SE = document.getElementById('se2');
+                SE.play();
+            } 
+        });
+      });
+
+
+    </script>
+
+
+    <!-- <script type="text/javascript" src="js/common.js"></script> -->
+  </body>
+</html>
